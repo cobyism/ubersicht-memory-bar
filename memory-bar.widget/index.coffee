@@ -1,4 +1,4 @@
-command: "memory_pressure && sysctl -a | grep memsize"
+command: "memory_pressure && sysctl hw.memsize"
 
 refreshFrequency: 2000
 
