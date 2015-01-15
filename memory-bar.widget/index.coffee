@@ -141,7 +141,7 @@ update: (output, domEl) ->
   activePages = lines[12].split(": ")[1]
   wiredPages = lines[16].split(": ")[1]
 
-  totalBytes = lines[28].split(" = ")[1]
+  totalBytes = lines[28].split(": ")[1]
   $(domEl).find(".total").text usageFormat(totalBytes / 1024 / 1024)
 
   updateStat 'free', freePages, totalBytes
