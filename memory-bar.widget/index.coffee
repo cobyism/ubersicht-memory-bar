@@ -1,6 +1,7 @@
 command: "memory_pressure && sysctl -n hw.memsize"
 
 refreshFrequency: 2000
+showTitle: true # Show a title at the top of this widget.
 
 style: """
   // Change bar height
@@ -88,9 +89,12 @@ style: """
 """
 
 
-render: -> """
-  <div class="container">
-    <div class="widget-title">Memory</div>
+render: -> 
+  out = """<div class="container">"""
+  if (this.showTitle)
+    out += """<div class="widget-title">Memory</div>""" 
+
+  out += """
     <table class="stats-container" width="100%">
       <tr>
         <td class="stat"><span class="wired"></span></td>
